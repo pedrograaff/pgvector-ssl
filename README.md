@@ -1,10 +1,9 @@
 # SSL-enabled Postgres DB image
 
-This repository contains the logic to build SSL-enabled Postgres images.
+This repository contains the logic to build SSL-enabled Postgres images with pgvector enabled.
 
 By default, when you deploy Postgres from the official Postgres template on Railway, the image that is used is built from this repository!
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/postgres)
 
 ### Why though?
 
