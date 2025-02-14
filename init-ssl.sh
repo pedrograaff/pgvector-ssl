@@ -55,3 +55,14 @@ ssl_cert_file = '$SSL_SERVER_CRT'
 ssl_key_file = '$SSL_SERVER_KEY'
 ssl_ca_file = '$SSL_ROOT_CRT'
 EOF
+
+# Enable `pgvector` Extension
+echo "Enabling pgvector extension..."
+until pg_isready -U postgres; do
+  echo "Waiting for PostgreSQL to be ready..."
+  sleep 2
+done
+
+psql -U postgres -d postgres -c "CREATE EXTENSION IF NOT EXISTS vector;"
+
+echo "SSL and pgvector initialization complete."
